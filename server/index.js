@@ -13,9 +13,6 @@ app.use(express.static("./dist"));
 app.use("/api/v1/post", postRoutes);
 app.use("/api/v1/dallE", dallERoutes);
 
-app.get("/", async (req, res) => {
-  res.send("API is running...");
-});
 
 const port = 5000 || process.env.PORT;
 const startServer = async () => {
