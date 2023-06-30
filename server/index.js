@@ -8,6 +8,8 @@ app.use(express.json({ limit: "50mb" }));
 const postRoutes = require("./routes/PostRoutes");
 const dallERoutes = require("./routes/DallERoutes");
 
+app.use(express.static("./dist"));
+
 app.use("/api/v1/post", postRoutes);
 app.use("/api/v1/dallE", dallERoutes);
 
