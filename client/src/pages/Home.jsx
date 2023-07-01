@@ -11,7 +11,7 @@ const Home = () => {
   const fetchPost = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://127.0.0.1:5000/api/v1/post", {
+      const res = await fetch("/api/v1/post", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

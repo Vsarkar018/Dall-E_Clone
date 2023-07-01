@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { logo, preview } from "../assets";
+import {preview } from "../assets";
 import {getRandomPrompt} from "../utils";
 import FormField from "../components/FormField";
 import Loader from "../components/Loader";
@@ -15,7 +15,7 @@ const CreatePost = () => {
       setLoading(true);
     }
     try {
-      const res = await fetch("http://127.0.0.1:5000/api/v1/post", {
+      const res = await fetch("/api/v1/post", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,7 +40,7 @@ const CreatePost = () => {
   const generateImage = async () => {
     try {
       setGeneratingImg(true);
-      const res = await fetch("http://127.0.0.1:5000/api/v1/dallE", {
+      const res = await fetch("/api/v1/dallE", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
